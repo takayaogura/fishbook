@@ -17,7 +17,7 @@
         </ul>
     </div>
     @endif
-    <form action="/FishBook/public/book/add" method="post">
+    <form action="/FishBook/book/add" method="post">
     <table>
         @csrf
         <tr><th>魚種: </th><td><input type="text" name="fish_species"></td></tr>

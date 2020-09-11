@@ -8,16 +8,15 @@
 @endsection
 
 @section('content')
+    <p>登録ユーザー一覧</p>
    <table>
-   <tr><th>Name</th><th>Mail</th></tr>
    @foreach ($items as $item)
        <tr>
            <td>{{$item->name}}</td>
-           <td>{{$item->email}}</td>
        </tr>
    @endforeach
    </table>
-   <p><a href="/FishBook/public/home">Homeへ</a></p>
+   <p><a href="/FishBook/">Homeへ</a></p>
 @endsection
 
 @section('footer')
