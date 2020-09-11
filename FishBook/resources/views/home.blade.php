@@ -14,9 +14,9 @@
                         </div>
                     @endif
 
-                    {{$user->name}}{{ __('さんの図鑑です') }} 
-                    <p><a href="/FishBook/public/book/">図鑑に移動する</a></p>
-                    <p><a href="/FishBook/public/user/">マイページに移動する</a></p>
+                    {{$user->name}}{{ __('さんの図鑑です') }}
+                    <p><a href="/FishBook/book/">図鑑に移動する</a></p>
+                    <p><a href="/FishBook/user/">マイページに移動する</a></p>
                 </div>
             </div>
         </div>

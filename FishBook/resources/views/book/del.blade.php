@@ -17,7 +17,7 @@
         </ul>
     </div>
     @endif
-    <form action="/FishBook/public/book/del" method="post">
+    <form action="/FishBook/book/del" method="post">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}"><!--BookControllerファンクションの「$request->id」に値を入れるためのinputタグ-->
