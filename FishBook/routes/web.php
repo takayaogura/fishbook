@@ -42,3 +42,5 @@ Route::post('/book/del', 'BookController@remove');
 
 Route::get('/user', 'UserController@index');
 //Route::post('/user', 'UserController@');
+Route::get('/user/add', 'ProfileController@add');
+Route::post('/user/add', 'ProfileController@create');

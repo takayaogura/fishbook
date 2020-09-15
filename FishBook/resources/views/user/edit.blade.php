@@ -14,19 +14,7 @@
                         </div>
                     @endif
 
-                    <p>ID      : {{Auth::user()->id}}</p>
-                    <p>name    : {{Auth::user()->name}}</p>
-                    <p>email   : {{Auth::user()->email}}</p>
-
-                    @if (isset($profile))
-                    <!--なぜstorage/app/public/profile_picture/ではなくstorage/profile_picture/なんだろう？-->
-                    <p><img src="{{asset('storage/profile_picture/'.$profile->picture)}}"></p>
-                    <p>ニックネーム      : {{$profile->user_name}}</p>
-                    <p>プロフィール      : {{$profile->intro}}</p>
-                    @else
-                    <p><a href="/FishBook/user/add">プロフィールを登録する</a></p>
-                    @endif
-
+                    <p><a href="/FishBook/edit">編集する</a></p>
                     <p><a href="/FishBook/book/">図鑑に移動する</a></p>
                     <p><a href="/FishBook/">ホームに移動する</a></p>
                 </div>

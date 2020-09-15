@@ -14,19 +14,16 @@
                         </div>
                     @endif
 
-                    <p>ID      : {{Auth::user()->id}}</p>
-                    <p>name    : {{Auth::user()->name}}</p>
-                    <p>email   : {{Auth::user()->email}}</p>
-
-                    @if (isset($profile))
-                    <!--なぜstorage/app/public/profile_picture/ではなくstorage/profile_picture/なんだろう？-->
-                    <p><img src="{{asset('storage/profile_picture/'.$profile->picture)}}"></p>
-                    <p>ニックネーム      : {{$profile->user_name}}</p>
-                    <p>プロフィール      : {{$profile->intro}}</p>
-                    @else
-                    <p><a href="/FishBook/user/add">プロフィールを登録する</a></p>
-                    @endif
-
+                    <form action="/FishBook/user/add" method="post" enctype='multipart/form-data'>
+                        <table>
+                            @csrf
+                            <tr><th>ニックネーム: </th><td><input type="text" name="user_name"></td></tr>
+                            <tr><th>プロフィール: </th><td><input type="text" name="intro"></td></tr>
+                            <tr><th>写真: </th><td><input type="file" name="picture"></td></tr>
+                            <tr><th></th><td><input type="submit" value="add"></td></tr>
+                        </table>
+                    </form>
+                    
                     <p><a href="/FishBook/book/">図鑑に移動する</a></p>
                     <p><a href="/FishBook/">ホームに移動する</a></p>
                 </div>
