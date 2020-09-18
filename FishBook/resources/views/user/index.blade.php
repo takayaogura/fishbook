@@ -20,7 +20,7 @@
 
                     @if (isset($profile))
                     <!--なぜstorage/app/public/profile_picture/ではなくstorage/profile_picture/なんだろう？-->
-                    <p><img src="{{asset('storage/profile_picture/'.$profile->picture)}}"></p>
+                    <p><img src="{{asset('storage/profile_picture/'.$profile->picture)}}" class="picture"></p>
                     <p>ニックネーム      : {{$profile->user_name}}</p>
                     <p>プロフィール      : {{$profile->intro}}</p>
                     @else
