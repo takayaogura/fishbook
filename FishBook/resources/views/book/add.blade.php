@@ -23,13 +23,15 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/FishBook/book/add" method="post">
+                    <form action="/FishBook/book/add" method="post" enctype='multipart/form-data'>
                     <table>
                         @csrf
                         <tr><th>魚種: </th><td><input type="text" name="fish_species"></td></tr>
                         <tr><th>サイズ(cm): </th><td><input type="number" name="size"></td></tr>
                         <tr><th>場所: </th><td><input type="text" name="place"></td></tr>
                         <tr><th>釣行日: </th><td><input type="datetime" name="fishing_date"></td></tr>
+                        <tr><th>コメント: </th><td><input type="text" name="comment"></td></tr>
+                        <tr><th>写真: </th><td><input type="file" name="picture"></td></tr>
                         <tr><th></th><td><input type="submit" value="add"></td></tr>
                     </table>
                     </form>

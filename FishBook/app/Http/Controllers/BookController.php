@@ -10,10 +10,16 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
+
         $user = Auth::user();
-        //$itemsに図鑑のデータを入れる　booksテーブルの中から、ログインしているユーザーのbookのみを選び5件ずつ表示
-        $items = Book::orderBy('fishing_date', 'desc')->where('user_id', $user->id)->simplePaginate(5);
-        return view('book.index', ['items' => $items, 'user' => $user]);
+        //issetで簡易バリデーション
+        if (isset($user)) {
+            //$itemsに図鑑のデータを入れる　booksテーブルの中から、ログインしているユーザーのbookのみを選び5件ずつ表示
+            $items = Book::orderBy('fishing_date', 'desc')->where('user_id', $user->id)->simplePaginate(5);
+            return view('book.index', ['items' => $items, 'user' => $user]);
+        } else {
+            return redirect('login');
+        }
     }
 
     public function find(Request $request)
@@ -59,6 +65,10 @@ class BookController extends Controller
         unset($form['_token']);
         $book->fill($form);
         $book->user_id = $user->id;
+
+        $path = $request->file('picture')->store('public/fish_picture');
+        $book->picture = basename($path);    
+
         $book->save();
         return redirect('/book');
     }
@@ -81,6 +91,10 @@ class BookController extends Controller
         unset($form['_token']);
         $book->fill($form);
         $book->user_id = $user->id;
+
+        $path = $request->file('picture')->store('public/fish_picture');
+        $book->picture = basename($path);    
+
         $book->save();
         return redirect('/book');
     }
@@ -95,6 +109,12 @@ class BookController extends Controller
     {
         Book::find($request->id)->delete();
         return redirect('/book');
+    }
+
+    public function detail(Request $request)
+    {
+        $item = Book::find($request->id);
+        return view('book.detail', ['item' => $item]);
     }
 
 }

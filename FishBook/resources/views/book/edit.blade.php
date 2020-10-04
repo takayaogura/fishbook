@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/FishBook/book/edit" method="post">
+                    <form action="/FishBook/book/edit" method="post" enctype='multipart/form-data'>
                     <table>
                         @csrf
                         <input type="hidden" name="id" value="{{$form->id}}"><!--updateファンクションの「$request->id」に値を入れるためのinputタグ-->
@@ -31,6 +31,8 @@
                         <tr><th>サイズ(cm): </th><td><input type="number" name="size" value="{{$form->size}}"></td></tr>
                         <tr><th>場所: </th><td><input type="text" name="place" value="{{$form->place}}"></td></tr>
                         <tr><th>釣行日: </th><td><input type="datetime" name="fishing_date" value="{{$form->fishing_date}}"></td></tr>
+                        <tr><th>コメント: </th><td><input type="text" name="comment" value="{{$form->comment}}"></td></tr>
+                        <tr><th>写真: </th><td><input type="file" name="picture"></td></tr>
                         <tr><th></th><td><input type="submit" value="edit"></td></tr>
                     </table>
                     </form>
