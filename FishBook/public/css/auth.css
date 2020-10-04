@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/*======== 共通部分========= */
+body a{
+    text-decoration: none;
+}
+
+h2 {
+    color: #2699FB;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb15 {
+    margin-bottom: 15px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+
+
+/*======== スマホ用CSS========= */
+
+main {
+    height: 100%;
+}
+
+header {
+    justify-content: center;
+    height: 80px;
+    line-height: 80px;
+    background-color: #ededed;
+    text-align: center;
+}
+
+header .back {
+    position: absolute;
+    left: 25px;
+    top: 7px;
+}
+
+
+header h1 {
+    color: #2699FB;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.container {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+.login-text {
+    margin: 30px auto;
+}
+
+.lp-link {
+    display: inline-block;
+    width: 70%;
+    height: 30px;
+    background-color: #ededed;
+    border-radius: 20px;
+}
+
+.lp-link a {
+    color: #2699FB;
+}
+
+
+.forms {
+    margin: 40px 0 20px 0;
+}
+
+
+
+.form input {
+    width: 80%;
+    height: 45px;
+    border: 1px solid  #2699FB;
+    border-radius: 20px;
+    margin:10px 0; /*仮*/
+    padding-left: 15px;
+}
+
+
+.form input::placeholder {
+   color: #2699FB;
+   opacity: 0.7;
+}
+
+
+
+.btns {
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    width: 80%;
+    height: 45px;
+    margin: 10px 0;
+}
+
+.login, .create{
+    background-color: #2699FB;
+    border-radius: 20px;
+}
+
+.login p, .create p {
+    color: white;
+}
+
+.register {
+    border: 1px solid  #2699FB;
+    border-radius: 20px;
+}
+
+.register a {
+    color: #2699FB;
+}
+
+.forget {
+    font-size: 12px;
+    color: #2699FB;
+}
+
+.login, .email{
+    background-color: #2699FB;
+    border-radius: 20px;
+}
+
+.login, .email p {
+    color: white;
+}
+
+
+/*======== 481px以上に適用されるCSS（タブレット用） ========*/
+@media screen and (min-width: 481px) {
+
+}
+
+
+/*======== 960px以上に適用されるCSS（PC用）========*/
+
+@media screen and (min-width: 960px) {
+}

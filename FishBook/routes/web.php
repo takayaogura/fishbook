@@ -14,21 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {return view('welcome');});
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+//  /にアクセスがあった場合、/bookにリダイレクトする。また、middleware('auth')でログインチェック→/loginへのリダイレクト
+Route::get('/', function(){
+    return redirect('/book');
+})->middleware('auth');
 
-Route::get('/hello', 'HelloController@index');
-
-//Route::get('/books', 'BooksController@index');
-//Route::post('/books', 'BooksController@post');
 
 Route::get('/book', 'BookController@index');
 
 Route::get('/book/find', 'BookController@find');
-//Route::post('/book/find', 'BookController@search');
 Route::post('/book/result', 'BookController@search');
 
 Route::get('/book/add', 'BookController@add');
@@ -40,7 +37,9 @@ Route::post('/book/edit', 'BookController@update');
 Route::get('/book/del', 'BookController@delete');
 Route::post('/book/del', 'BookController@remove');
 
+Route::get('/book/detail', 'BookController@detail');
+//Route::post('/book/del', 'BookController@remove');
+
 Route::get('/user', 'UserController@index');
-//Route::post('/user', 'UserController@');
 Route::get('/user/add', 'ProfileController@add');
 Route::post('/user/add', 'ProfileController@create');
